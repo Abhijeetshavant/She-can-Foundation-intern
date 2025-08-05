@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Can Foundation - Intern Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .navbar {
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Improved Navigation Bar / -->
+    <nav class="navbar fixed w-full bg-purple-900 bg-opacity-90 text-white z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Brand -->
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold">
+                        She Can <span class="text-pink-400">Foundation</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button" id="mobile-menu-button">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white hover:text-pink-300 transition-all font-medium">Home</a>
+                    <a href="/" class="text-white hover:text-pink-300 transition-all font-medium">Profile</a>
+                    <a href="/certificate" class="text-white hover:text-pink-300 transition-all font-medium">Our Certificate</a>
+                    <a href="#donation" class="text-white hover:text-pink-300 transition-all font-medium">Donation</a>
+                    <a href="#about" class="text-white hover:text-pink-300 transition-all font-medium">About Us</a>
+                    <a href="#dashboard" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full transition-all font-medium">
+                        Intern Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden mobile-menu bg-purple-800 md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 text-white hover:bg-purple-700 rounded-md text-base font-medium">Home</a>
+                <a href="/" class="block px-3 py-2 text-white hover:bg-purple-700 rounded-md text-base font-medium">profile</a>
+                <a href="/certificate" class="block px-3 py-2 text-white hover:bg-purple-700 rounded-md text-base font-medium">Our Certificate</a>
+                <a href="#donation" class="block px-3 py-2 text-white hover:bg-purple-700 rounded-md text-base font-medium">Donation</a>
+                <a href="#about" class="block px-3 py-2 text-white hover:bg-purple-700 rounded-md text-base font-medium">About Us</a>
+                <a href="#dashboard" class="block px-3 py-2 text-center bg-pink-600 hover:bg-pink-700 text-white rounded-md text-base font-medium">
+                    Intern Portal
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Image (from first code) -->
+    <div class="hero-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="overlay absolute inset-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center text-white py-20">
+                <h1 class="text-5xl font-bold mb-6">She Can Foundation</h1>
+                <p class="text-xl mb-8">Empowering Women, Transforming Lives</p>
+                <a href="#dashboard" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full transition-all">
+                    Intern Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section (from first code) -->
+    <div id="dashboard" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-purple-800 mb-12">Intern Dashboard</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Intern Info Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6 card-hover transition-all">
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-user text-purple-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800" id="internName">Intern Name</h3>
+                        <p class="text-gray-600 mt-2">She Can Foundation Intern</p>
+                    </div>
+                </div>
+                
+                <!-- Referral Code Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6 card-hover transition-all">
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-pink-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-gift text-pink-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Your Referral Code</h3>
+                        <p class="text-gray-600 mt-2 bg-gray-100 p-2 rounded" id="referralCode">yourname2025</p>
+                        <button class="mt-4 bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded transition-all">
+                            Copy Code
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Donations Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6 card-hover transition-all">
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-hand-holding-heart text-green-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Total Donations Raised</h3>
+                        <p class="text-3xl font-bold text-green-600 mt-2" id="donationsRaised">0</p>
+                        <p class="text-gray-500 mt-2">Thank you for your support!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rewards Section -->
+            <div class="mt-16 bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-purple-800 mb-6">Your Rewards & Unlockables</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="border border-purple-200 rounded-lg p-4 text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            <i class="fas fa-medal text-purple-600"></i>
+                        </div>
+                        <h4 class="font-semibold">Bronze Badge</h4>
+                        <p class="text-sm text-gray-500 mt-1">Raise ₹5,000</p>
+                    </div>
+                    <div class="border border-purple-200 rounded-lg p-4 text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            <i class="fas fa-certificate text-purple-600"></i>
+                        </div>
+                        <h4 class="font-semibold">Silver Badge</h4>
+                        <p class="text-sm text-gray-500 mt-1">Raise ₹15,000</p>
+                    </div>
+                    <div class="border border-purple-200 rounded-lg p-4 text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            <i class="fas fa-trophy text-purple-600"></i>
+                        </div>
+                        <h4 class="font-semibold">Gold Badge</h4>
+                        <p class="text-sm text-gray-500 mt-1">Raise ₹25,000</p>
+                    </div>
+                    <div class="border border-purple-200 rounded-lg p-4 text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            <i class="fas fa-star text-purple-600"></i>
+                        </div>
+                        <h4 class="font-semibold">Platinum Badge</h4>
+                        <p class="text-sm text-gray-500 mt-1">Raise ₹50,000</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leaderboard Button -->
+            <div class="mt-12 text-center">
+                <a href="#leaderboard" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full inline-block transition-all">
+                    View Leaderboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Section with Image (from first code) -->
+    <div id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop" alt="Women Empowerment" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">About Us</h2>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Global Vision, Local Action</h3>
+                    <p class="text-gray-600 mb-6">
+                        We are She Can Foundation, a non-governmental organization registered under the Indian Society Act, 1860, dedicated to empowering women and creating a more equitable society. We provide support, resources, and training to women in communities across the globe, working closely with local organizations, governments, and communities to ensure that our programs are effective and sustainable.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Through advocacy campaigns and initiatives, we raise awareness of women's issues. We rely on the support of individuals, corporations, and other organizations to achieve our vision. We believe that by working together, we can revolutionize society and create a better world for all.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Our Team Section with Image (from first code) -->
+    <div class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 order-2 md:order-1">
+                    <h2 class="text-3xl font-bold text-purple-800 mb-6">Join our <span class="text-pink-600">TEAM</span></h2>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Join our team and make a difference in the lives of women in need. At She Can Foundation, we are committed to creating positive change and empowering women in communities across the globe. By joining our team, you will have the opportunity to contribute your time, skills, and ideas to help make a real impact in the lives of women."
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Whether you are passionate about education, health, or providing support during times of crisis, there is a place for you on our team. Join us today and be a part of an organization that is dedicated to creating a more equitable society, one woman at a time.
+                    </p>
+                    <button class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition-all">
+                        JOIN US
+                    </button>
+                </div>
+                <div class="md:w-1/2 mb-8 md:mb-0 order-1 md:order-2">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Team of women" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Section (from first code) -->
+    <div class="py-16 bg-purple-700 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xl italic mb-6 max-w-3xl mx-auto">
+                "Together, we can break down barriers and empower women. At She Can Foundation, we believe that if we all do our part, there is no challenge too great to overcome. Join us in our mission to create a world where every woman has the opportunity to thrive and succeed."
+            </p>
+            <p class="font-bold">REETA MISHRA</p>
+            <p class="text-purple-200">Founder & President, She Can Foundation</p>
+        </div>
+    </div>
+
+    <!-- Leaderboard Section (from first code) -->
+    <div id="leaderboard" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-purple-800 mb-12">Top Performers</h2>
+            
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <table class="min-w-full">
+                    <thead class="bg-purple-600 text-white">
+                        <tr>
+                            <th class="py-3 px-6 text-left">Rank</th>
+                            <th class="py-3 px-6 text-left">Intern Name</th>
+                            <th class="py-3 px-6 text-left">Referral Code</th>
+                            <th class="py-3 px-6 text-right">Amount Raised</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200" id="leaderboardData">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Get in Touch Section (from first code) -->
+    <div class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-purple-800 mb-12">Get in touch</h2>
+            
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <i class="fas fa-envelope text-purple-600 text-2xl"></i>
+                    </div>
+                    <p class="text-gray-600 mb-2"><span class="font-semibold">Email:</span> president@shecanfoundation.org</p>
+                    <p class="text-gray-600 mb-6"><span class="font-semibold">Contact:</span> +91- 8283841830</p>
+                    <a href="https://shecanfoundation.org/" class="text-purple-600 hover:text-purple-800 font-semibold transition-all">
+                        https://shecanfoundation.org/
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (from first code) -->
+    <footer class="bg-purple-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">She Can Foundation</h3>
+                    <p class="text-purple-300">Empowering Women, Transforming Lives</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-white hover:text-purple-300 transition-all">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-purple-300 transition-all">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-purple-300 transition-all">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-purple-300 transition-all">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-purple-800 mt-6 pt-6 text-center text-purple-300 text-sm">
+                <p>© 2023 She Can Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript (combined from both codes) -->
+    <script>
+        // Mobile menu toggle (from second code)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link (from second code)
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links (from second code)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mock data - in a real app, this would come from your backend API (from first code)
+        const internData = {
+            name: "Priya Sharma",
+            referralCode: "priya2025",
+            donationsRaised: 12450,
+            rank: 3
+        };
+
+        const leaderboardData = [
+            { rank: 1, name: "Ananya Patel", referralCode: "ananya2025", amount: 28700 },
+            { rank: 2, name: "Riya Gupta", referralCode: "riya2025", amount: 19500 },
+            { rank: 3, name: "Priya Sharma", referralCode: "priya2025", amount: 12450 },
+            { rank: 4, name: "Neha Singh", referralCode: "neha2025", amount: 9800 },
+            { rank: 5, name: "Divya Kumar", referralCode: "divya2025", amount: 7500 }
+        ];
+
+        // Display intern data (from first code)
+        document.getElementById('internName').textContent = internData.name;
+        document.getElementById('referralCode').textContent = internData.referralCode;
+        document.getElementById('donationsRaised').textContent = '₹' + internData.donationsRaised.toLocaleString();
+
+        // Display leaderboard data (from first code)
+        const leaderboardTable = document.getElementById('leaderboardData');
+        leaderboardData.forEach(intern => {
+            const row = document.createElement('tr');
+            row.className = 'hover:bg-gray-50 transition-all';
+            row.innerHTML = `
+                <td class="py-4 px-6">${intern.rank}</td>
+                <td class="py-4 px-6 font-medium">${intern.name}</td>
+                <td class="py-4 px-6">${intern.referralCode}</td>
+                <td class="py-4 px-6 text-right">₹${intern.amount.toLocaleString()}</td>
+            `;
+            if (intern.referralCode === internData.referralCode) {
+                row.classList.add('bg-purple-50');
+            }
+            leaderboardTable.appendChild(row);
+        });
+    </script>
+</body>
+</html>
+
+
