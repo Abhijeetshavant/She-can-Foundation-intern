@@ -20,7 +20,7 @@ const userModel = require("./models/register-model")
 
 const upload = multer({ 
   storage: storage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit check
   fileFilter: (req, file, cb) => {
     const filetypes = /pdf|doc|docx/;
     const mimetype = filetypes.test(file.mimetype);
