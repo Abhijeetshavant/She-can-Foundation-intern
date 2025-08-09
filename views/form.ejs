@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.4.0/dist/forms.min.css" rel="stylesheet">
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .input-focus:focus {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <!-- Animated Background -->
+  <div class="gradient-bg w-full h-64 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+      <div class="animate__animated animate__fadeIn text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Internship Portal</h1>
+        <p class="text-xl text-white opacity-90">Kickstart your career with us</p>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full h-16 bg-white transform skew-y-3 origin-bottom-left"></div>
+  </div>
+
+  <!-- Main Form -->
+  <div class="container mx-auto px-4 py-12 -mt-20 relative z-10">
+    <div class="max-w-3xl mx-auto animate__animated animate__fadeInUp">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+        <% if (typeof error !== 'undefined') { %>
+          <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 animate__animated animate__shakeX" role="alert">
+            <p class="font-bold">Error</p>
+            <p><%= error %></p>
+          </div>
+        <% } %>
+
+        <div class="p-8">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">Application Form</h2>
+          <form action="/form" method="post" enctype="multipart/form-data" class="space-y-6">
+            <!-- Personal Information -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700 border-b pb-2">Personal Information</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="fullname" class="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
+                  <input type="text" id="fullname" name="fullname" required
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 input-focus transition duration-200">
+                </div>
+                
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+                  <input type="email" id="email" name="email" required
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 input-focus transition duration-200">
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="whatsapp" class="block text-sm font-medium text-gray-700 mb-1">WhatsApp Number*</label>
+                  <input type="tel" id="whatsapp" name="whatsapp" required
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 input-focus transition duration-200">
+                </div>
+                
+                <div>
+                  <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">Gender*</label>
+                  <select id="gender" name="gender" required
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 input-focus transition duration-200">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div>
+                <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Address*</label>
+                <textarea id="address" name="address" rows="3" required
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 input-focus transition duration-200"></textarea>
+              </div>
+            </div>
+            
+            <!-- Education Information -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700 border-b pb-2">Education Information</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="year" class="block text-sm font-medium text-gray-700 mb-1">Year of Study*</label>
+                  <select id="year" name="year" required
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 input-focus transition duration-200">
+                    <option value="" disabled selected>Select Year</option>
+                    <option value="1st">1st Year</option>
+                    <option value="2nd">2nd Year</option>
+                    <option value="3rd">3rd Year</option>
+                    <option value="4th">4th Year</option>
+                    <option value="5th">5th Year</option>
+                    <option value="graduated">Graduated</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="qualification" class="block text-sm font-medium text-gray-700 mb-1">Qualification*</label>
+                  <input type="text" id="qualification" name="qualification" required
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 input-focus transition duration-200">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Internship Preferences -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700 border-b pb-2">Internship Preferences</h3>
+              
+              <div>
+                <label for="domain" class="block text-sm font-medium text-gray-700 mb-1">Preferred Internship Domain*</label>
+                <select id="domain" name="domain" required
+                  class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 input-focus transition duration-200">
+                  <option value="" disabled selected>Select Domain</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="mobile-development">Mobile Development</option>
+                  <option value="data-science">Data Science</option>
+                  <option value="machine-learning">Machine Learning</option>
+                  <option value="cybersecurity">Cybersecurity</option>
+                  <option value="cloud-computing">Cloud Computing</option>
+                  <option value="ui-ux-design">UI/UX Design</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="business-development">Business Development</option>
+                  <option value="content-writing">Content Writing</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Resume Upload -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700 border-b pb-2">Resume Upload</h3>
+              
+              <div class="flex items-center justify-center w-full">
+                <label for="resume" class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition duration-200">
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                    <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                    <p class="text-xs text-gray-500">PDF or DOCX (MAX. 5MB)</p>
+                  </div>
+                  <input id="resume" name="resume" type="file" class="hidden" accept=".pdf,.doc,.docx" required />
+                </label>
+              </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="pt-4">
+          <button type="submit" class="w-full gradient-bg text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition duration-200 transform hover:scale-[1.01] shadow-lg animate__animated animate__pulse animate__infinite animate__slower">
+               <a href="/submit" class="text-white hover:text-blue-300 transition-all font-medium">Submit</a>
+            </button> 
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-2">© 2023 Internship Portal. All rights reserved.</p>
+      <p class="text-gray-400 text-sm">Designed with Tailwind CSS and Animate.css</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animation triggers
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputs = document.querySelectorAll('input, select, textarea');
+      
+      inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+          input.parentElement.classList.add('animate__animated', 'animate__pulse');
+        });
+        
+        input.addEventListener('blur', () => {
+          input.parentElement.classList.remove('animate__animated', 'animate__pulse');
+        });
+      });
+      
+      // File upload display
+      const fileInput = document.getElementById('resume');
+      const fileLabel = fileInput.parentElement;
+      
+      fileInput.addEventListener('change', (e) => {
+        if (fileInput.files.length > 0) {
+          const fileName = fileInput.files[0].name;
+          fileLabel.innerHTML = `
+            <div class="p-4 text-center">
+              <svg class="w-8 h-8 mx-auto text-green-500 mb-2 animate__animated animate__bounceIn" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <p class="text-sm font-medium text-gray-700">${fileName}</p>
+              <p class="text-xs text-gray-500 mt-1">Click to change file</p>
+            </div>
+          `;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
